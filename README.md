@@ -8,26 +8,6 @@
   <img src="assets/hero-ui.png" width="760" alt="Luxcurrency Preview"/>
 </p>
 
----
-
-## 🌟 ** Your Unique Experience **
-
-You open Luxcurrency and see a **single elegant input box** glowing on a Rolex-inspired green-gold interface.
-
-It looks simple…
-
-But then you type something like:
-
-* `4 lakh`
-* `1 crore 50 lakh`
-* `2Cr 30L`
-* `4.4k`
-* `2.3 million`
-
-And Luxcurrency *understands all of it*.
-
----
-
 ## 🔮 **The Magic: Hybrid Input Intelligence**
 
 This is the heart of Luxcurrency.
@@ -84,17 +64,6 @@ Always clean.
 
 ---
 
-## 🔁 **Reverse Conversion Included**
-
-Tap ↔ and instantly swap:
-
-**INR → USD ↔ USD → INR**
-
-Luxcurrency reinterprets the input automatically according to the selected system.
-No retyping. No confusion. Just seamless intelligence.
-
----
-
 ## 🔥 **Why Luxcurrency Exists**
 
 Because every other converter demands:
@@ -108,10 +77,32 @@ It adapts to **you**, not the other way around.
 
 ---
 
+## ✔️ How to Run (Local)
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourusername/hybrid-currency-converter.git
+cd hybrid-currency-converter
+```
+### 2. Start backend
+
+```bash
+npm install
+npm start
+```
+
+### 3. Open frontend
+
+Just open `index.html` in your browser.
+
+---
+
 ## 🚀 **Want to Contribute?**
 
-Fork the project, explore the engine, open issues, or submit PRs.
-Hybrid number parsing is an open challenge — let’s push it further.
+Fork the project, explore the codebase, open issues, or submit PRs.
+Pilot version only supports INR to USD or Vice-versa.
+Make this compatible for your desired currencies aswell
 
 ---
 
@@ -121,10 +112,3 @@ Hybrid number parsing is an open challenge — let’s push it further.
 Free to use. Free to modify. Free to innovate.
 
 ---
-
-If you want, I can also create:
-✨ A banner image
-✨ A tagline/slogan
-✨ A GIF showing the hybrid input magic
-✨ A one-liner for your GitHub repo description
-
