@@ -1,113 +1,20 @@
-# 💎 **Luxcurrency**
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-### *The world’s first hybrid-number currency converter.*
+# Run and deploy your AI Studio app
 
----
+This contains everything you need to run your app locally.
 
-<p align="center">
-  <img src="assets/hero-ui.png" width="760" alt="Luxcurrency Preview"/>
-</p>
+View your app in AI Studio: https://ai.studio/apps/drive/1z6ypt2fAS0786AD3L3qPNd0_gRNQDlU6
 
-## 🔮 **The Magic: Hybrid Input Intelligence**
+## Run Locally
 
-This is the heart of Luxcurrency.
-It doesn’t need strict numbers. It understands **real human financial language** across two worlds:
+**Prerequisites:**  Node.js
 
-### 🇮🇳 **Indian Hybrid Inputs**
 
-* lakh
-* lakhs
-* crore
-* Cr
-* L
-* Indian commas
-* Mixed expressions like `1 crore 75 lakh 20k`
-
-### 🇺🇸 **American Hybrid Inputs**
-
-* thousand
-* k
-* million
-* M
-* billion
-* B
-* Decimals
-* Comma variations
-
-Luxcurrency **parses, normalizes, detects scale, converts, and returns** the exact equivalent across systems.
-
-It feels like talking to a human who “gets” both cultures.
-
----
-
-## 💰 **What You Get Back**
-
-A luxurious output card showing **both versions**:
-
-```
-4.4 thousand USD (4.4k)
-```
-
-or
-
-```
-4 lakh INR (4L)
-```
-
-Always dual-format.
-Always human-readable.
-Always clean.
-
-<p align="center">
-  <img src="assets/output-card.png" width="550" alt="Luxcurrency Output"/>
-</p>
-
----
-
-## 🔥 **Why Luxcurrency Exists**
-
-Because every other converter demands:
-
-* strict numbers
-* digits only
-* no “crore”, no “million”, no “4.4k”, no “2Cr”
-
-Luxcurrency flips the script.
-It adapts to **you**, not the other way around.
-
----
-
-## ✔️ How to Run (Local)
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/denvermax001/luxcurrency.git
-cd luxcurrency
-```
-### 2. Start backend
-
-```bash
-npm start
-```
-
-### 3. Open frontend
-
-Just open `index.html` in your browser.
-
----
-
-## 🚀 **Want to Contribute?**
-
-Fork the project, explore the codebase, open issues, or submit PRs.
-Pilot version only supports INR to USD or Vice-versa.
-Make this compatible for your desired currencies aswell
-
----
-
-## 📄 **License**
-
-**MIT License**
-Free to use. Free to modify. Free to innovate.
-
----
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

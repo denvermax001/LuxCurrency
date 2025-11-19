@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { ArrowRightLeft, Sparkles, Info } from 'lucide-react';
-import { Currency, ParseResult, ConversionResult } from '../types';
+import React, { useState, useEffect } from 'react';
+import { ArrowRightLeft, Info } from 'lucide-react';
+import { Currency } from '../types';
 import { parseHybridNumber } from '../utils/parser';
 import { formatAmerican, formatAmericanAbbr, formatIndian, formatIndianAbbr, formatCurrency } from '../utils/formatter';
 import { getExchangeRates } from '../services/currencyService';
-import { getPurchasingPowerInsight } from '../services/geminiService';
 
 export const ConverterCard: React.FC = () => {
   const [inputStr, setInputStr] = useState<string>('');
@@ -13,8 +12,6 @@ export const ConverterCard: React.FC = () => {
   const [conversionRate, setConversionRate] = useState<number>(0); // 1 USD = ? INR
   const [parsedValue, setParsedValue] = useState<number | null>(null);
   const [result, setResult] = useState<number | null>(null);
-  const [insight, setInsight] = useState<string>('');
-  const [loadingInsight, setLoadingInsight] = useState<boolean>(false);
 
   // Initial Rate Fetch
   useEffect(() => {
@@ -31,7 +28,6 @@ export const ConverterCard: React.FC = () => {
     setInputStr('');
     setParsedValue(null);
     setResult(null);
-    setInsight('');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,20 +54,6 @@ export const ConverterCard: React.FC = () => {
       setResult(converted);
     }
   };
-
-  // Debounced Insight Fetch using Gemini
-  useEffect(() => {
-    if (!result || result <= 0) return;
-
-    const timer = setTimeout(async () => {
-      setLoadingInsight(true);
-      const text = await getPurchasingPowerInsight(result, targetCurrency);
-      setInsight(text);
-      setLoadingInsight(false);
-    }, 1200); // 1.2s debounce
-
-    return () => clearTimeout(timer);
-  }, [result, targetCurrency]);
 
   return (
     <div className="relative w-full max-w-2xl mx-auto p-[1px] rounded-2xl bg-gradient-to-b from-lux-gold/40 to-transparent shadow-2xl">
@@ -150,23 +132,6 @@ export const ConverterCard: React.FC = () => {
                   </div>
                 )}
              </div>
-
-             {/* AI Insight Section */}
-             {result && (
-               <div className="mt-6 pt-6 border-t border-white/5">
-                 <div className="flex items-start gap-3">
-                   <div className="mt-1 text-lux-paleGold animate-pulse">
-                     <Sparkles size={16} />
-                   </div>
-                   <div>
-                     <p className="text-xs font-bold text-lux-paleGold mb-1 uppercase tracking-wide">Rolex Insight</p>
-                     <p className="text-sm text-lux-grey italic leading-relaxed">
-                       {loadingInsight ? "Analyzing market value..." : (insight || "Enter a valid amount to see value analysis.")}
-                     </p>
-                   </div>
-                 </div>
-               </div>
-             )}
           </div>
         </div>
 

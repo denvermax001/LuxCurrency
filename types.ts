@@ -24,8 +24,3 @@ export interface RateData {
   rates: { [key: string]: number };
   lastUpdated: number;
 }
-
-export interface InsightData {
-  text: string;
-  loading: boolean;
-}
